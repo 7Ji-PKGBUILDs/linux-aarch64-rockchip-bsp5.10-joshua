@@ -1,5 +1,5 @@
 pkgbase = linux-rockchip-joshua
-	pkgver = 5.10.160.29
+	pkgver = 5.10.160.30
 	pkgrel = 1
 	url = https://github.com/Joshua-Riek
 	arch = aarch64
@@ -12,15 +12,15 @@ pkgbase = linux-rockchip-joshua
 	makedepends = bc
 	makedepends = dtc
 	options = !strip
-	source = linux-rockchip-5.10.160-29.tar.gz::https://github.com/Joshua-Riek/linux-rockchip/archive/refs/tags/5.10.160-29.tar.gz
+	source = linux-rockchip-5.10.160-30.tar.gz::https://github.com/Joshua-Riek/linux-rockchip/archive/refs/tags/5.10.160-30.tar.gz
 	source = 01-gcc-wrapper.patch
 	source = linux.preset
-	sha512sums = 5d1ed454345de185c5087a27a3c9855d79a278501e984663b647f4d1bb0b46a39a8b3df045de4302055938b62d9fe784ef47b269415ddc7667e2545f7e5478ad
+	sha512sums = 4b052abe3ff4c6d7fac6cbbe4f7b4ebb14ee0eb51c6b25b1e71a1f2a075744f6a12729a13faf91cec99dee24667b93ca47c95c864a4c9d20acdff59159756e5f
 	sha512sums = a2daf21e3df0a0a50b0e81f4a163754acc08fb1104b875560a984123ccb83c31bd6fd47951e666faaa73723a400766cf9350b13d4ec0d566183f81cff03a68d8
 	sha512sums = 2dc6b0ba8f7dbf19d2446c5c5f1823587de89f4e28e9595937dd51a87755099656f2acec50e3e2546ea633ad1bfd1c722e0c2b91eef1d609103d8abdc0a7cbaf
 
 pkgname = linux-rockchip-joshua
-	pkgdesc = The linux-rockchip-5.10.160-29 kernel, with patches picked by Joshua Riek focusing on RK3588
+	pkgdesc = The linux-rockchip-5.10.160-30 kernel, with patches picked by Joshua Riek focusing on RK3588
 	depends = coreutils
 	depends = kmod
 	depends = initramfs
@@ -28,5 +28,5 @@ pkgname = linux-rockchip-joshua
 	backup = etc/mkinitcpio.d/linux-rockchip-joshua.preset
 
 pkgname = linux-rockchip-joshua-headers
-	pkgdesc = Headers and scripts for building modules for the linux-rockchip-5.10.160-29 kernel, with patches picked by Joshua Riek focusing on RK3588
+	pkgdesc = Headers and scripts for building modules for the linux-rockchip-5.10.160-30 kernel, with patches picked by Joshua Riek focusing on RK3588
 	depends = python
