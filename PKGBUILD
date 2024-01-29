@@ -5,7 +5,7 @@
 pkgbase=linux-rockchip-joshua
 pkgname=("${pkgbase}"{,-headers})
 _kernelver=5.10.160
-_patchver=28
+_patchver=29
 _tag="${_kernelver}-${_patchver}"
 pkgver="${_kernelver}.${_patchver}"
 pkgrel=1
@@ -24,7 +24,7 @@ source=(
 )
 
 sha512sums=(
-  '971bffa300ba775a23483c99df26afb7ca3e6486b931fb550d9b4362321d6bb730ed644647e1750bb640ba5f5ec2148b206ec35532dfc45d5b7ef196a927ce69'
+  '5d1ed454345de185c5087a27a3c9855d79a278501e984663b647f4d1bb0b46a39a8b3df045de4302055938b62d9fe784ef47b269415ddc7667e2545f7e5478ad'
   'a2daf21e3df0a0a50b0e81f4a163754acc08fb1104b875560a984123ccb83c31bd6fd47951e666faaa73723a400766cf9350b13d4ec0d566183f81cff03a68d8'
   '2dc6b0ba8f7dbf19d2446c5c5f1823587de89f4e28e9595937dd51a87755099656f2acec50e3e2546ea633ad1bfd1c722e0c2b91eef1d609103d8abdc0a7cbaf'
 )
