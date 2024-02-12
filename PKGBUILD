@@ -5,7 +5,7 @@
 pkgbase=linux-rockchip-joshua
 pkgname=("${pkgbase}"{,-headers})
 _kernelver=5.10.160
-_patchver=30
+_patchver=31
 _tag="${_kernelver}-${_patchver}"
 pkgver="${_kernelver}.${_patchver}"
 pkgrel=1
@@ -19,13 +19,11 @@ _reponame='linux-rockchip'
 _srcname="${_reponame}-${_tag}"
 source=(
   "${_srcname}.tar.gz::${url}/${_reponame}/archive/refs/tags/${_tag}.tar.gz"
-  '01-gcc-wrapper.patch'
   'linux.preset'
 )
 
 sha512sums=(
-  '4b052abe3ff4c6d7fac6cbbe4f7b4ebb14ee0eb51c6b25b1e71a1f2a075744f6a12729a13faf91cec99dee24667b93ca47c95c864a4c9d20acdff59159756e5f'
-  'a2daf21e3df0a0a50b0e81f4a163754acc08fb1104b875560a984123ccb83c31bd6fd47951e666faaa73723a400766cf9350b13d4ec0d566183f81cff03a68d8'
+  'b0537c917fabb515740fa356703d3950d4eae5210a17d2b2b8c72b61e1b97e4dd03542f1aa75a1e506725aba21a128e0b23c737262577ccbf0fa50fab48bf6df'
   '2dc6b0ba8f7dbf19d2446c5c5f1823587de89f4e28e9595937dd51a87755099656f2acec50e3e2546ea633ad1bfd1c722e0c2b91eef1d609103d8abdc0a7cbaf'
 )
 
@@ -41,9 +39,6 @@ prepare() {
     echo "Custom Patching with ${p}"
     patch -p1 -N -i $p || true
   done
-
-  echo "Patch gcc-wrapper.patch to fix strict warning..."
-  patch -p1 -N -i ../01-gcc-wrapper.patch || true
 
   echo "Preparing config..."
   cat arch/arm64/configs/rockchip_linux_defconfig > .config
