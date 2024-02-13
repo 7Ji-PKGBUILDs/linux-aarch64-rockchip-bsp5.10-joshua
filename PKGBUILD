@@ -159,7 +159,7 @@ _package-headers() {
 
   echo "Adding symlink..."
   mkdir -p "$pkgdir/usr/src"
-  ln -sr "$builddir" "$pkgdir/usr/src/linux-$_kernel_tag"
+  ln -sr "$builddir" "$pkgdir/usr/src/$pkgbase"
 }
 
 for _p in ${pkgname[@]}; do
