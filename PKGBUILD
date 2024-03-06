@@ -2,13 +2,13 @@
 # Maintainer: Jat-faan Wong
 # Contributor: Jat-faan Wong, Guoxin "7Ji" Pu, Joshua-Riek 
 
-pkgbase=linux-rockchip-joshua
+pkgbase=linux-aarch64-rockchip-bsp5.10-joshua
 pkgname=("${pkgbase}"{,-headers})
 _kernelver=5.10.160
 _patchver=31
 _tag="${_kernelver}-${_patchver}"
 pkgver="${_kernelver}.${_patchver}"
-pkgrel=2
+pkgrel=1
 arch=('aarch64')
 license=('GPL2')
 url="https://github.com/Joshua-Riek"
@@ -32,7 +32,7 @@ prepare() {
 
   echo "Setting version..."
   echo "-${_patchver}" > localversion.10-patchver
-  echo "${pkgbase#linux}" > localversion.20-pkgname
+  echo "-rockchip" > localversion.20-pkgname
   
   # this is only for local builds so there is no need to integrity check. (if needed)
   for p in ../../custom/*.patch; do
@@ -41,8 +41,7 @@ prepare() {
   done
 
   echo "Preparing config..."
-  cat arch/arm64/configs/rockchip_linux_defconfig > .config
-  make olddefconfig prepare
+  make rockchip_linux_defconfig prepare
 
   make -s kernelrelease > version
   echo "Prepared for $(<version)"
