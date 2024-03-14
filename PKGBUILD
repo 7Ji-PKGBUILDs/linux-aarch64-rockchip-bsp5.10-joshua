@@ -5,7 +5,7 @@
 pkgbase=linux-aarch64-rockchip-bsp5.10-joshua
 pkgname=("${pkgbase}"{,-headers})
 _kernelver=5.10.160
-_patchver=31
+_patchver=32
 _tag="${_kernelver}-${_patchver}"
 pkgver="${_kernelver}.${_patchver}"
 pkgrel=1
@@ -23,7 +23,7 @@ source=(
 )
 
 sha512sums=(
-  'b0537c917fabb515740fa356703d3950d4eae5210a17d2b2b8c72b61e1b97e4dd03542f1aa75a1e506725aba21a128e0b23c737262577ccbf0fa50fab48bf6df'
+  '4ea8b670b1ea4ad7cb842df059d17f6356d29f9f4faa175510d4d2f3872114409c3dc948c258db9c94421dbd8bca08e26fa05dedc17b931465a86a0946aade6c'
   '2dc6b0ba8f7dbf19d2446c5c5f1823587de89f4e28e9595937dd51a87755099656f2acec50e3e2546ea633ad1bfd1c722e0c2b91eef1d609103d8abdc0a7cbaf'
 )
 
