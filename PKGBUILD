@@ -5,7 +5,7 @@
 pkgbase=linux-aarch64-rockchip-bsp5.10-joshua
 pkgname=("${pkgbase}"{,-headers})
 _kernelver=5.10.160
-_patchver=32
+_patchver=33
 _tag="${_kernelver}-${_patchver}"
 pkgver="${_kernelver}.${_patchver}"
 pkgrel=1
@@ -19,12 +19,10 @@ _reponame='linux-rockchip'
 _srcname="${_reponame}-${_tag}"
 source=(
   "${_srcname}.tar.gz::${url}/${_reponame}/archive/refs/tags/${_tag}.tar.gz"
-  'linux.preset'
 )
 
 sha512sums=(
-  '4ea8b670b1ea4ad7cb842df059d17f6356d29f9f4faa175510d4d2f3872114409c3dc948c258db9c94421dbd8bca08e26fa05dedc17b931465a86a0946aade6c'
-  '2dc6b0ba8f7dbf19d2446c5c5f1823587de89f4e28e9595937dd51a87755099656f2acec50e3e2546ea633ad1bfd1c722e0c2b91eef1d609103d8abdc0a7cbaf'
+  'bcf840caed3083d28940e240cb3c7e0f6dd201d09d502580bb997ba6280f258a6580f03bf5d6fe9716c2976e6055e95157dac4755efbee1b8cc88b94d1cea1dd'
 )
 
 prepare() {
@@ -59,7 +57,6 @@ _package() {
   pkgdesc="The ${_srcname} kernel, ${_desc}"
   depends=('coreutils' 'kmod' 'initramfs')
   optdepends=('wireless-regdb: to set the correct wireless channels of your country')
-  backup=("etc/mkinitcpio.d/${pkgbase}.preset")
 
   cd "${_srcname}"
   
@@ -78,10 +75,6 @@ _package() {
 
   # used by mkinitcpio to name the kernel
   echo "${pkgbase}" | install -D -m 644 /dev/stdin "${_dir_module}/pkgbase"
-
-  # install mkinitcpio preset file
-  sed "s|%PKGBASE%|${pkgbase}|g" ../linux.preset |
-    install -Dm644 /dev/stdin "${pkgdir}/etc/mkinitcpio.d/${pkgbase}.preset"
 }
 
 _package-headers() {
